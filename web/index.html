@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="cartouche-token" content="{{TOKEN}}">
+  <meta name="color-scheme" content="dark light">
+  <title>Cartouche</title>
+  <link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/vendor/phosphor/style.css">
+  <link rel="stylesheet" href="/static/app.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <aside class="rail">
+    <div class="brand">
+      <img class="brand-mark" src="/static/icon.svg" alt="" width="34" height="34">
+      <div>
+        <p class="brand-name">Cartouche</p>
+        <p class="brand-sub">PKG · PS4 &amp; PS3</p>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Sections">
+      <a class="nav-item" href="#library" data-view="library">
+        <i class="ph-duotone ph-game-controller" aria-hidden="true"></i><span>Bibliothèque</span><b class="count" data-count="games"></b>
+      </a>
+      <a class="nav-item" href="#pkgs" data-view="pkgs">
+        <i class="ph-duotone ph-package" aria-hidden="true"></i><span>Fichiers PKG</span><b class="count" data-count="pkgs"></b>
+      </a>
+      <a class="nav-item" href="#jobs" data-view="jobs">
+        <i class="ph-duotone ph-download-simple" aria-hidden="true"></i><span>Installations</span><b class="count live" data-count="jobs"></b>
+      </a>
+      <a class="nav-item" href="#settings" data-view="settings">
+        <i class="ph-duotone ph-sliders-horizontal" aria-hidden="true"></i><span>Réglages</span><b class="dot" data-dot="settings"></b>
+      </a>
+      <a class="nav-item" href="#diagnostic" data-view="diagnostic">
+        <i class="ph-duotone ph-stethoscope" aria-hidden="true"></i><span>Diagnostic</span>
+      </a>
+    </nav>
+
+    <div class="rail-foot">
+      <div class="emu" id="emu-shadps4"></div>
+      <div class="emu" id="emu-rpcs3"></div>
+      <button class="quit" type="button" data-action="quit">
+        <i class="ph-duotone ph-power" aria-hidden="true"></i><span>Quitter</span>
+      </button>
+      <p class="app-version">Cartouche v{{VERSION}}</p>
+    </div>
+  </aside>
+
+  <main class="stage">
+    <div id="now-playing" class="now-playing" hidden></div>
+    <header class="stage-head">
+      <div class="titles">
+        <p class="eyebrow" id="view-eyebrow"></p>
+        <h1 id="view-title">Cartouche</h1>
+      </div>
+      <div class="tools" id="view-tools"></div>
+    </header>
+    <section id="view" class="view" tabindex="-1" aria-live="polite"></section>
+  </main>
+
+  <div id="drawer-backdrop" class="backdrop" hidden></div>
+  <aside id="drawer" class="drawer" role="dialog" aria-modal="true" aria-label="Détails" hidden></aside>
+  <div id="modal-root"></div>
+  <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+  <div id="offline" class="offline" hidden>
+    <i class="ph-duotone ph-warning-circle" aria-hidden="true"></i>
+    <span>Cartouche ne répond plus. Relance l'application si ça dure.</span>
+  </div>
+</body>
+</html>
